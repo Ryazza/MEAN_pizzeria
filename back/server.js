@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 let logger = require('morgan');
 // routes
-let functionsRoutes = require('./routes/code.routes');
+
 // -----
 
 let app = express();
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Routes
-app.use('/librairie', functionsRoutes);
+
 // -----
 
 // DB
