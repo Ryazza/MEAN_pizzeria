@@ -12,7 +12,7 @@ export class PizzaCardComponent implements OnInit {
   api = "http://localhost:4242/";
   displayPizza = false;
   onePizza;
-
+  pizzaSize = "Medium";
 
   constructor(private http: HttpClient) {}
 
@@ -41,5 +41,7 @@ export class PizzaCardComponent implements OnInit {
       }
     )
   }
-
+  changeSize(event) {
+    this.pizzaSize = event.target.value;
+  }
 }

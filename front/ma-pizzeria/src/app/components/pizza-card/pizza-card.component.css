@@ -8,5 +8,5 @@
 .pizza-card_image {
   padding: 15px;
   border: 1px solid rgba(128, 128, 128, 0.36);
-  box-shadow: 10px 10px 20px grey;
+  box-shadow: 1px 1px 10px grey;
 }
