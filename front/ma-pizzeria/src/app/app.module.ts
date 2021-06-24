@@ -11,6 +11,7 @@ import { PizzaCardComponent } from './components/pizza-card/pizza-card.component
 import { PanierComponent } from './components/panier/panier.component';
 import { PizzaTextComponent } from './components/pizza-text/pizza-text.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
+import { DetailPizzaComponent } from './components/detail-pizza/detail-pizza.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DetailPageComponent } from './pages/detail-page/detail-page.component';
     PizzaCardComponent,
     PanierComponent,
     PizzaTextComponent,
-    DetailPageComponent
+    DetailPageComponent,
+    DetailPizzaComponent
   ],
   imports: [
     BrowserModule,

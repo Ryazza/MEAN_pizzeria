@@ -5,8 +5,8 @@ import { DetailPageComponent } from "./pages/detail-page/detail-page.component";
 
 const routes: Routes = [
   { path: '', component: MainPageComponent},
-  { path: '/pizza/:id', component: DetailPageComponent},
-  { path: '**' , component: MainPageComponent}
+  { path: 'pizza/:id', component: DetailPageComponent},
+  { path: '**' , component: MainPageComponent},
 ];
 
 @NgModule({
