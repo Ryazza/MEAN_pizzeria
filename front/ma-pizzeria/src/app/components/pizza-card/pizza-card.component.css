@@ -1,0 +1,12 @@
+.pizza-card_font {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 25px;
+}
+.pizza-card_font-title {
+  font-family: 'Bebas Neue', cursive;
+}
+.pizza-card_image {
+  padding: 15px;
+  border: 1px solid rgba(128, 128, 128, 0.36);
+  box-shadow: 1px 1px 10px grey;
+}
