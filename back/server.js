@@ -22,7 +22,7 @@ app.use('/pizza', PizzaRoutes)
 
 // DB
 let mongoose = require('mongoose');
-let mongoDB = 'mongodb://localhost:27042/MaPizzeria';
+let mongoDB = 'mongodb://localhost:27042/DominosPizza';
 
 mongoose.set('useCreateIndex', true)
 mongoose.set('useFindAndModify', false);
