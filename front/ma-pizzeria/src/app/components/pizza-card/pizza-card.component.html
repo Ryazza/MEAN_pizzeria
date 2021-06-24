@@ -1,5 +1,4 @@
-<div class="row justify-content-start mt-5" *ngIf="!displayPizza">
-  <!--  <app-pizza-text pizza="pizza"></app-pizza-text>-->
+<div class="row justify-content-start mt-5">
   <hr/>
   <h1 class="text-start mb-4 mt-2 pizza-card_font-categorie">Les Prestiges</h1>
   <ng-container *ngFor="let pizza of pizzas">
@@ -9,9 +8,9 @@
         <div class="card-body">
           <h5 class="card-title pizza-card_font">{{pizza.nom}}</h5>
           <div class="text-end">
-            <button class="btn btn-danger btn-sm pizza-card_font-btn" (click)="thisPizza(pizza._id)">
+            <a class="btn btn-danger btn-sm pizza-card_font-btn" [routerLink]="['pizza/' + pizza._id]">
               Voir plus ...
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -26,9 +25,9 @@
         <div class="card-body">
           <h5 class="card-title pizza-card_font">{{pizza.nom}}</h5>
           <div class="text-end">
-            <button class="btn btn-danger btn-sm pizza-card_font-btn" (click)="thisPizza(pizza._id)">
+            <a class="btn btn-danger btn-sm pizza-card_font-btn" [routerLink]="['pizza/' + pizza._id]">
               Voir plus ...
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -43,7 +42,7 @@
         <div class="card-body">
           <h5 class="card-title pizza-card_font">{{pizza.nom}}</h5>
           <div class="text-end">
-            <button class="btn btn-danger btn-sm pizza-card_font-btn" (click)="thisPizza(pizza._id)">
+            <button class="btn btn-danger btn-sm pizza-card_font-btn" [routerLink]="['pizza/' + pizza._id]">
               Voir plus ...
             </button>
           </div>
@@ -53,50 +52,3 @@
   </ng-container>
 </div>
 
-<div class="row justify-content-center mt-1 mb-4" *ngIf="displayPizza">
-  <div class="row justify-content-start mb-2 mt-2">
-    <div class="col-3 p-0 mb-3">
-      <button (click)="returnToCards()" class="pizza-card_font-btn btn btn-danger pe-5 ps-5">RETOUR</button>
-    </div>
-  </div>
-  <h1 class="pizza-card_font-title text-start">{{onePizza.nom}}</h1>
-  <hr/>
-  <div class="col-8">
-    <img src="{{api + onePizza.miniature}}" alt="{{onePizza.nom}}" class="img-fluid pizza-card_image"/>
-  </div>
-  <div class="col-4">
-    <div class="mb-5">
-      <h3 class="pizza-card_font-title">Recette</h3>
-      <p>{{ onePizza.recette }}</p>
-    </div>
-    <hr/>
-    <div class="mb-5">
-      <h3 class="pizza-card_font-title">Taille</h3>
-      <select class="form-select" (change)="changeSize($event)">
-        <option value="Medium" selected>Medium</option>
-        <option value="Large">Large</option>
-        <option value="XL">XL</option>
-      </select>
-    </div>
-    <hr/>
-    <div class="mb-3 p-3 bg-light">
-      <h3 class="pizza-card_font-title rounded-3">Prix</h3>
-      <div class="row justify-content-end">
-        <div class="col-4">
-          <div *ngFor="let price of onePizza.prices" class="text-end">
-            <div *ngIf='pizzaSize === "Medium"'>{{price.Medium}}</div>
-            <div *ngIf='pizzaSize === "Large"'>{{price.Large}}</div>
-            <div *ngIf='pizzaSize === "XL"'>{{price.XL}}</div>
-          </div>
-        </div>
-        <div class="col-1 text-start p-0">
-          €
-        </div>
-      </div>
-    </div>
-    <div class="mb-3 p-3 text-end">
-      <button class="btn btn-danger btn-lg pizza-card_font-btn ps-5 pe-5">AJOUTER</button>
-    </div>
-  </div>
-</div>
-<hr>
