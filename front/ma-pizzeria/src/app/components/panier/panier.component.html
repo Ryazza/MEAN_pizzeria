@@ -1,6 +1,19 @@
-<div class="row p-2 m-2 mt-5 panier_container rounded-3">
+<div class="row p-2 m-2 mt-5 panier_container rounded-3" >
   <div class="col-12">
     <h4 class="panier_font">Ma Commande</h4>
-
+    <hr>
+    <div *ngFor="let item of command.command" class="row panier_items p-1 rounded-3 mb-1">
+      <div class="col-4">
+        <img src="{{url + item.photo}}" alt="{{item.nom}}" class="img-fluid panier_image"/>
+      </div>
+      <div class="col-5">
+        {{item.nom}} <br />
+        {{item.size}}
+      </div>
+      <div class="col-3">
+        {{item.price}} €
+      </div>
+    </div>
+    h4
   </div>
 </div>

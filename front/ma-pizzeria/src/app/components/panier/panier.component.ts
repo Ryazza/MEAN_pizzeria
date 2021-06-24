@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-panier',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanierComponent implements OnInit {
 
+  command;
+  url = environment.urlBack;
   constructor() { }
 
   ngOnInit(): void {
+    this.command = JSON.parse(localStorage.getItem("command"))
   }
 
 }

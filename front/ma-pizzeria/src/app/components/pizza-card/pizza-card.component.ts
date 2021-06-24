@@ -19,7 +19,6 @@ export class PizzaCardComponent implements OnInit {
       data => {
         // @ts-ignore
         this.pizzas = data;
-        console.log(data);
       },
       error => {
         console.log(error)
