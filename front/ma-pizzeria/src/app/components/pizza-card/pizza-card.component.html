@@ -1,20 +1,64 @@
-<div class="row justify-content-center mt-5" *ngIf="!displayPizza">
+<div class="row justify-content-start mt-5" *ngIf="!displayPizza">
   <!--  <app-pizza-text pizza="pizza"></app-pizza-text>-->
-  <div class="col-3" *ngFor="let pizza of pizzas">
-    <div class="card bg-light card-light mb-4">
-      <img src="{{api + pizza.photo}}" class="card-img-top" alt="{{pizza.nom}}">
-      <div class="card-body">
-        <h5 class="card-title pizza-card_font">{{pizza.nom}}</h5>
-        <div class="text-end">
-          <a class="btn btn-danger btn-sm" (click)="thisPizza(pizza._id)">
-            Voir plus ...
-          </a>
+  <hr/>
+  <h1 class="text-start mb-4 mt-2 pizza-card_font-categorie">Les Prestiges</h1>
+  <ng-container *ngFor="let pizza of pizzas">
+    <div class="col-3" *ngIf='pizza.categorie === "Prestige"'>
+      <div class="card bg-light card-light mb-4">
+        <img src="{{api + pizza.photo}}" class="card-img-top" alt="{{pizza.nom}}">
+        <div class="card-body">
+          <h5 class="card-title pizza-card_font">{{pizza.nom}}</h5>
+          <div class="text-end">
+            <button class="btn btn-danger btn-sm pizza-card_font-btn" (click)="thisPizza(pizza._id)">
+              Voir plus ...
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </ng-container>
+  <hr/>
+  <h1 class="text-start mb-4 mt-2 pizza-card_font-categorie">Les Original</h1>
+  <ng-container *ngFor="let pizza of pizzas">
+    <div class="col-3" *ngIf='pizza.categorie === "Original"'>
+      <div class="card bg-light card-light mb-4">
+        <img src="{{api + pizza.photo}}" class="card-img-top" alt="{{pizza.nom}}">
+        <div class="card-body">
+          <h5 class="card-title pizza-card_font">{{pizza.nom}}</h5>
+          <div class="text-end">
+            <button class="btn btn-danger btn-sm pizza-card_font-btn" (click)="thisPizza(pizza._id)">
+              Voir plus ...
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <hr/>
+  <h1 class="text-start mb-4 mt-2 pizza-card_font-categorie">Les Classique</h1>
+  <ng-container *ngFor="let pizza of pizzas">
+    <div class="col-3" *ngIf='pizza.categorie === "Classique"'>
+      <div class="card bg-light card-light mb-4">
+        <img src="{{api + pizza.photo}}" class="card-img-top" alt="{{pizza.nom}}">
+        <div class="card-body">
+          <h5 class="card-title pizza-card_font">{{pizza.nom}}</h5>
+          <div class="text-end">
+            <button class="btn btn-danger btn-sm pizza-card_font-btn" (click)="thisPizza(pizza._id)">
+              Voir plus ...
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
 </div>
-<div class="row justify-content-center mt-5 mb-5" *ngIf="displayPizza">
+
+<div class="row justify-content-center mt-1 mb-4" *ngIf="displayPizza">
+  <div class="row justify-content-start mb-2 mt-2">
+    <div class="col-3 p-0 mb-3">
+      <button (click)="returnToCards()" class="pizza-card_font-btn btn btn-danger pe-5 ps-5">RETOUR</button>
+    </div>
+  </div>
   <h1 class="pizza-card_font-title text-start">{{onePizza.nom}}</h1>
   <hr/>
   <div class="col-8">
@@ -50,5 +94,9 @@
         </div>
       </div>
     </div>
+    <div class="mb-3 p-3 text-end">
+      <button class="btn btn-danger btn-lg pizza-card_font-btn ps-5 pe-5">AJOUTER</button>
+    </div>
   </div>
 </div>
+<hr>

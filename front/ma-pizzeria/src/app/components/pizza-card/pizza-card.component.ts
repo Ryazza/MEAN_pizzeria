@@ -44,4 +44,7 @@ export class PizzaCardComponent implements OnInit {
   changeSize(event) {
     this.pizzaSize = event.target.value;
   }
+  returnToCards() {
+    this.displayPizza = false
+  }
 }
