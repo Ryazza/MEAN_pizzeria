@@ -1,5 +1,14 @@
-<div>
-  <ul>
-    <li *ngFor="let pizza of pizzas">{{pizza.nom}}</li>
-  </ul>
+<div class="row justify-content-center mt-5">
+  <div class="col-3" *ngFor="let pizza of pizzas">
+    <div class="card bg-light card-light mb-4">
+      <img src="{{api + pizza.photo}}" class="card-img-top" alt="{{pizza.nom}}">
+      <div class="card-body">
+        <h5 class="card-title pizza-card_font">{{pizza.nom}}</h5>
+        <div class="text-end">
+          <button class="btn btn-danger btn-sm">Voir plus ...</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+

@@ -8,6 +8,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { PizzaCardComponent } from './components/pizza-card/pizza-card.component';
+import { PanierComponent } from './components/panier/panier.component';
+import { PizzaPageComponent } from './pages/pizza-page/pizza-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { PizzaCardComponent } from './components/pizza-card/pizza-card.component
     HomepageComponent,
     NavbarComponent,
     MainPageComponent,
-    PizzaCardComponent
+    PizzaCardComponent,
+    PanierComponent,
+    PizzaPageComponent
   ],
   imports: [
     BrowserModule,

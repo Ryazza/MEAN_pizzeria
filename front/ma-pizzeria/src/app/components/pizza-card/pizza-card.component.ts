@@ -9,6 +9,7 @@ import {HttpClient} from '@angular/common/http';
 export class PizzaCardComponent implements OnInit {
 
   pizzas;
+  api = "http://localhost:4242/";
 
   constructor(private http: HttpClient) {}
 
