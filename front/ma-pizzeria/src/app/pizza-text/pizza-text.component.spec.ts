@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PizzaPageComponent } from './pizza-page.component';
+import { PizzaTextComponent } from './pizza-text.component';
 
-describe('PizzaPageComponent', () => {
-  let component: PizzaPageComponent;
-  let fixture: ComponentFixture<PizzaPageComponent>;
+describe('PizzaTextComponent', () => {
+  let component: PizzaTextComponent;
+  let fixture: ComponentFixture<PizzaTextComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PizzaPageComponent ]
+      declarations: [ PizzaTextComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PizzaPageComponent);
+    fixture = TestBed.createComponent(PizzaTextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

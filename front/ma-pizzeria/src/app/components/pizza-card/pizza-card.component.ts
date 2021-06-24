@@ -10,19 +10,34 @@ export class PizzaCardComponent implements OnInit {
 
   pizzas;
   api = "http://localhost:4242/";
+  displayPizza = false;
+  onePizza;
+
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     // Simple GET request with response type <any>
-    this.http.get('http://localhost:4242/pizza').subscribe(
+    this.http.get(this.api +'pizza').subscribe(
       data => {
         // @ts-ignore
         this.pizzas = data;
         console.log(data);
       },
       error => {
-        // console.log(error)
+        console.log(error)
+      }
+    )
+  }
+  thisPizza(id) {
+    this.http.get(this.api +'pizza/' + id).subscribe(
+      data => {
+        // @ts-ignore
+        this.onePizza = data;
+        this.displayPizza = true
+      },
+      error => {
+        console.log(error)
       }
     )
   }
