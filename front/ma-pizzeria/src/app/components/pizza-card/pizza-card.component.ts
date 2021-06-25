@@ -1,29 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {PizzaService} from '../../services/pizza.service';
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-pizza-card',
   templateUrl: './pizza-card.component.html',
   styleUrls: ['./pizza-card.component.css']
 })
+
 export class PizzaCardComponent implements OnInit {
 
   pizzas;
-  api = "http://localhost:4242/";
+  api = environment.urlBack;
 
-  constructor(private http: HttpClient) {}
+  constructor(private pizzaService: PizzaService) {}
 
   ngOnInit() {
-    // Simple GET request with response type <any>
-    this.http.get(this.api +'pizza').subscribe(
-      data => {
-        // @ts-ignore
-        this.pizzas = data;
-      },
-      error => {
-        console.log(error)
+    this.getPizzas();
+  }
+
+  async getPizzas() {
+    (await this.pizzaService.getAllPizza()).subscribe({
+      next: data => {
+        if (data) {
+          // @ts-ignore
+          this.pizzas = data;
+        }
       }
-    )
+    })
   }
 
 }

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
 import {environment} from "../../../environments/environment";
 import {Router} from "@angular/router"
+import {PizzaService} from "../../services/pizza.service";
 
 @Component({
   selector: 'app-detail-pizza',
@@ -17,15 +17,18 @@ export class DetailPizzaComponent implements OnInit {
   url = environment.urlBack;
   price;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
+  constructor( private route: ActivatedRoute, private router: Router, private pizzaService: PizzaService) {
   }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = params.id
     })
+    this.getPizza()
+  }
 
-    this.http.get(this.url + 'pizza/' + this.id).subscribe(
+  async getPizza() {
+    (await this.pizzaService.getOnePizza(this.id)).subscribe(
       data => {
         // @ts-ignore
         this.onePizza = data;
