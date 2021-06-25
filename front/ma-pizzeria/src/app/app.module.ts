@@ -9,7 +9,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { PizzaCardComponent } from './components/pizza-card/pizza-card.component';
 import { PanierComponent } from './components/panier/panier.component';
-import { PizzaTextComponent } from './pizza-text/pizza-text.component';
+import { DetailPageComponent } from './pages/detail-page/detail-page.component';
+import { DetailPizzaComponent } from './components/detail-pizza/detail-pizza.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,14 @@ import { PizzaTextComponent } from './pizza-text/pizza-text.component';
     MainPageComponent,
     PizzaCardComponent,
     PanierComponent,
-    PizzaTextComponent
+    DetailPageComponent,
+    DetailPizzaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

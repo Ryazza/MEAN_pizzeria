@@ -1,0 +1,48 @@
+
+<div class="row justify-content-center mt-1 mb-4" *ngIf="onePizza">
+  <div class="row justify-content-start mb-2 mt-2">
+    <div class="col-3 p-0 mb-3">
+      <a class="pizza-card_font-btn btn btn-danger pe-5 ps-5" [routerLink]="['']">RETOUR</a>
+    </div>
+  </div>
+  <h1 class="pizza-card_font-title text-start">{{onePizza.nom}}</h1>
+  <hr/>
+  <div class="col-8">
+    <img src="{{url + onePizza.miniature}}" alt="{{onePizza.nom}}" class="img-fluid pizza-card_image"/>
+  </div>
+  <div class="col-4">
+    <div class="mb-5">
+      <h3 class="pizza-card_font-title">Recette</h3>
+      <p>{{ onePizza.recette }}</p>
+    </div>
+    <hr/>
+    <div class="mb-5">
+      <h3 class="pizza-card_font-title">Taille</h3>
+      <select class="form-select" (change)="changeSize($event)">
+        <option value="Medium" selected>Medium</option>
+        <option value="Large">Large</option>
+        <option value="XL">XL</option>
+      </select>
+    </div>
+    <hr/>
+    <div class="mb-3 p-3 bg-light">
+      <h3 class="pizza-card_font-title rounded-3">Prix</h3>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <div *ngFor="let price of onePizza.prices" class="text-end">
+            <div *ngIf='pizzaSize === "Medium"'>{{price.Medium}}</div>
+            <div *ngIf='pizzaSize === "Large"'>{{price.Large}}</div>
+            <div *ngIf='pizzaSize === "XL"'>{{price.XL}}</div>
+          </div>
+        </div>
+        <div class="col-1 text-start p-0">
+          €
+        </div>
+      </div>
+    </div>
+    <div class="mb-3 p-3 text-end">
+      <button class="btn btn-danger btn-lg pizza-card_font-btn ps-5 pe-5" (click)="addToCart()">AJOUTER</button>
+    </div>
+  </div>
+</div>
+<hr>

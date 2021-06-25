@@ -2,9 +2,18 @@
   font-family: 'Bebas Neue', cursive;
   font-size: 25px;
 }
+
 .pizza-card_font-title {
   font-family: 'Bebas Neue', cursive;
 }
+
+.pizza-card_font-categorie {
+  font-family: 'Big Shoulders Stencil Display', cursive;
+}
+
+.pizza-card_font-btn {
+  font-family: 'Roboto Condensed', sans-serif;}
+
 .pizza-card_image {
   padding: 15px;
   border: 1px solid rgba(128, 128, 128, 0.36);

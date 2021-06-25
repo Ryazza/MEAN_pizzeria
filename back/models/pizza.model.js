@@ -20,6 +20,10 @@ const pizzaSchema  = new mongoose.Schema({
     prices: {
         type: Array,
         required: true
+    },
+    categorie: {
+        type: String,
+        required: true
     }
 });
 
