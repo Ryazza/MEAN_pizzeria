@@ -10,10 +10,15 @@ export class PanierComponent implements OnInit {
 
   command;
   url = environment.urlBack;
+  total = 0.0;
+
   constructor() { }
 
   ngOnInit(): void {
     this.command = JSON.parse(localStorage.getItem("command"))
+    for (let i = 0; i < this.command.command.length; i++) {
+      this.total += +this.command.command[i].price.replace(/,/g , '.');
+    }
   }
 
 }
