@@ -44,10 +44,10 @@ export class DetailPizzaComponent implements OnInit {
   }
 
   addToCart() {
-    const command = localStorage.getItem("command");
+    const command = localStorage.getItem("pizza");
     let myCommand;
     if (!command) {
-      myCommand = {command: []};
+      myCommand = [];
     } else {
       myCommand = JSON.parse(command);
     }
@@ -61,8 +61,8 @@ export class DetailPizzaComponent implements OnInit {
           photo: this.onePizza.photo,
           nbr: 1
         };
-        myCommand.command.push(pizza);
-        localStorage.setItem("command", JSON.stringify(myCommand));
+        myCommand.push(pizza);
+        localStorage.setItem("pizza", JSON.stringify(myCommand));
         this.router.navigate(['']);
         break;
       case 'Large' :
@@ -73,8 +73,8 @@ export class DetailPizzaComponent implements OnInit {
           photo: this.onePizza.photo,
           nbr: 1
         };
-        myCommand.command.push(pizza);
-        localStorage.setItem("command", JSON.stringify(myCommand));
+        myCommand.push(pizza);
+        localStorage.setItem("pizza", JSON.stringify(myCommand));
         this.router.navigate(['']);
         break;
       case 'XL' :
@@ -85,8 +85,8 @@ export class DetailPizzaComponent implements OnInit {
           photo: this.onePizza.photo,
           nbr: 1
         };
-        myCommand.command.push(pizza);
-        localStorage.setItem("command", JSON.stringify(myCommand));
+        myCommand.push(pizza);
+        localStorage.setItem("pizza", JSON.stringify(myCommand));
         this.router.navigate(['']);
         break;
     }
