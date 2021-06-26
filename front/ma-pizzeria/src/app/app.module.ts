@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './components/homepage/homepage.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { PizzaCardComponent } from './components/pizza-card/pizza-card.component';
@@ -15,7 +14,6 @@ import { DetailPizzaComponent } from './components/detail-pizza/detail-pizza.com
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent,
     NavbarComponent,
     MainPageComponent,
     PizzaCardComponent,

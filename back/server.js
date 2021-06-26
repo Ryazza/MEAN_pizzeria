@@ -6,6 +6,8 @@ const cors = require('cors');
 let logger = require('morgan');
 // routes
 let PizzaRoutes = require('./routes/pizza.routes');
+let BoissonRoutes = require('./routes/boisson.routes');
+let DessertRoutes = require('./routes/dessert.routes');
 // -----
 
 let app = express();
@@ -18,6 +20,8 @@ app.use(cors());
 
 // Routes
 app.use('/pizza', PizzaRoutes)
+app.use('/boisson', BoissonRoutes)
+app.use('/dessert', DessertRoutes)
 // -----
 
 // DB
