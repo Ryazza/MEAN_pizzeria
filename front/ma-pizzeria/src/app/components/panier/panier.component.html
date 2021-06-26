@@ -45,6 +45,28 @@
       </div>
       <hr>
     </ng-container>
+
+    <ng-container *ngIf="dessert">
+      <h6>Boisson</h6>
+      <div *ngFor="let item of dessert" class="row p-1 rounded-3 mb-1">
+        <div class="col-4">
+          <img src="{{url + item.photo}}" alt="{{item.nom}}" class="img-fluid panier_image"/>
+        </div>
+        <div class="col-5">
+          {{item.nom}} <br/>
+        </div>
+        <div class="col-3">
+          <div class="row justify-content-center">
+            {{item.price}} €
+          </div>
+          <div class="row justify-content-center">
+            <button class="btn btn-default" (click)="deleteDessert(item.nom, item.price)"><img src="../assets/clear.png" alt="Enlever cette élément" class="panier_delete_button"></button>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
     <h4 class="text-end mt-4">Total : {{total}} €</h4>
     <div class="row justify-content-center mt-4 mb-2">
       <div class="col-10 text-center">

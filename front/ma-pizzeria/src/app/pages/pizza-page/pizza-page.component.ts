@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-detail-page',
-  templateUrl: './detail-pizza-page.component.html',
-  styleUrls: ['./detail-pizza-page.component.css']
+  selector: 'app-main-page',
+  templateUrl: './pizza-page.component.html',
+  styleUrls: ['./pizza-page.component.css']
 })
-export class DetailPizzaPageComponent implements OnInit {
+export class PizzaPageComponent implements OnInit {
 
   constructor() {
     if(!localStorage.getItem("user")) {

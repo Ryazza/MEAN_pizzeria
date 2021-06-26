@@ -15,4 +15,8 @@ export class DessertService {
   async getAllDessert() {
     return this.http.get(this.api + this.baseUrl);
   }
+  async getOnePizza(id) {
+    return this.http.get(this.api + this.baseUrl + id);
+  }
+
 }

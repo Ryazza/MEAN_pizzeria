@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailDessertPageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    if(!localStorage.getItem("user")) {
+      window.location.href = '/';
+    }
+  }
 
   ngOnInit(): void {
   }

@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { MainPageComponent } from './pages/pizza-page/main-page.component';
+import { PizzaPageComponent } from './pages/pizza-page/pizza-page.component';
 import { PizzaCardComponent } from './components/pizza-card/pizza-card.component';
 import { PanierComponent } from './components/panier/panier.component';
 import { DetailPizzaPageComponent } from './pages/detail-pizza-page/detail-pizza-page.component';
@@ -15,12 +15,14 @@ import { BoissonCardComponent } from './components/boisson-card/boisson-card.com
 import { DessertPageComponent } from './pages/dessert-page/dessert-page.component';
 import { DessertCardComponent } from './components/dessert-card/dessert-card.component';
 import { DetailDessertPageComponent } from './pages/detail-dessert-page/detail-dessert-page.component';
+import { DetailDessertComponent } from './components/detail-dessert/detail-dessert.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    MainPageComponent,
+    PizzaPageComponent,
     PizzaCardComponent,
     PanierComponent,
     DetailPizzaPageComponent,
@@ -30,6 +32,8 @@ import { DetailDessertPageComponent } from './pages/detail-dessert-page/detail-d
     DessertPageComponent,
     DessertCardComponent,
     DetailDessertPageComponent,
+    DetailDessertComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,

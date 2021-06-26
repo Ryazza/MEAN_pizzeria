@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {environment} from "../../../environments/environment";
-import {Router} from "@angular/router"
 import {PizzaService} from "../../services/pizza.service";
 
 @Component({
@@ -9,6 +8,7 @@ import {PizzaService} from "../../services/pizza.service";
   templateUrl: './detail-pizza.component.html',
   styleUrls: ['./detail-pizza.component.css']
 })
+
 export class DetailPizzaComponent implements OnInit {
 
   onePizza;
@@ -63,7 +63,7 @@ export class DetailPizzaComponent implements OnInit {
         };
         myCommand.push(pizza);
         localStorage.setItem("pizza", JSON.stringify(myCommand));
-        this.router.navigate(['']);
+        this.router.navigate(['/pizza']);
         break;
       case 'Large' :
         pizza = {
@@ -75,7 +75,7 @@ export class DetailPizzaComponent implements OnInit {
         };
         myCommand.push(pizza);
         localStorage.setItem("pizza", JSON.stringify(myCommand));
-        this.router.navigate(['']);
+        this.router.navigate(['/pizza']);
         break;
       case 'XL' :
         pizza = {
@@ -87,7 +87,7 @@ export class DetailPizzaComponent implements OnInit {
         };
         myCommand.push(pizza);
         localStorage.setItem("pizza", JSON.stringify(myCommand));
-        this.router.navigate(['']);
+        this.router.navigate(['/pizza']);
         break;
     }
   }
