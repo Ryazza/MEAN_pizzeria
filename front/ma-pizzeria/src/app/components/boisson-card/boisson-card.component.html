@@ -1,0 +1,23 @@
+<div class="row justify-content-start mt-5">
+  <hr/>
+  <h1 class="text-start mb-4 mt-2 boisson-card_font-categorie">Les Boisson</h1>
+  <ng-container *ngFor="let boisson of boissons">
+    <div class="col-3">
+      <div class="card bg-light card-light mb-4">
+        <img src="{{api + boisson.photo}}" class="card-img-top" alt="{{boisson.nom}}">
+        <div class="card-body">
+          <h5 class="card-title boisson-card_font">{{boisson.nom}}</h5>
+          <div class="'mt-2 mb-3">
+            <div>Quantité : {{boisson.quantity}}</div>
+            <div>Prix : {{boisson.prices}} €</div>
+          </div>
+          <div class="text-end">
+            <a class="btn btn-danger btn-sm boisson-card_font-btn" (click)="addToCart(boisson.nom, boisson.prices, boisson.photo, boisson.quantity)">
+              Ajouter à la commande
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

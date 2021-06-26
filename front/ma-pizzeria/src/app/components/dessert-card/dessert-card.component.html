@@ -1,0 +1,54 @@
+<div class="row justify-content-start mt-5">
+  <hr/>
+  <h1 class="text-start mb-4 mt-2 dessert-card_font-categorie">Les Gateaux</h1>
+  <ng-container *ngFor="let dessert of desserts">
+    <div class="col-3" *ngIf='dessert.categorie === "Gâteau"'>
+      <div class="card bg-light card-light mb-4">
+        <img src="{{api + dessert.photo}}" class="card-img-top" alt="{{dessert.nom}}">
+        <div class="card-body">
+          <h5 class="card-title dessert-card_font">{{dessert.nom}}</h5>
+          <div class="text-end">
+            <a class="btn btn-danger btn-sm dessert-card_font-btn" [routerLink]="[dessert._id]">
+              Voir plus ...
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <hr/>
+  <h1 class="text-start mb-4 mt-2 dessert-card_font-categorie">Les Glaces</h1>
+  <ng-container *ngFor="let dessert of desserts">
+    <div class="col-3" *ngIf='dessert.categorie === "Glace"'>
+      <div class="card bg-light card-light mb-4">
+        <img src="{{api + dessert.photo}}" class="card-img-top" alt="{{dessert.nom}}">
+        <div class="card-body">
+          <h5 class="card-title dessert-card_font">{{dessert.nom}}</h5>
+          <div class="text-end">
+            <a class="btn btn-danger btn-sm dessert-card_font-btn" [routerLink]="[dessert._id]">
+              Voir plus ...
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <hr/>
+  <h1 class="text-start mb-4 mt-2 dessert-card_font-categorie">Les Fruits</h1>
+  <ng-container *ngFor="let dessert of desserts">
+    <div class="col-3" *ngIf='dessert.categorie === "Fruit"'>
+      <div class="card bg-light card-light mb-4">
+        <img src="{{api + dessert.photo}}" class="card-img-top" alt="{{dessert.nom}}">
+        <div class="card-body">
+          <h5 class="card-title dessert-card_font">{{dessert.nom}}</h5>
+          <div class="text-end">
+            <a class="btn btn-danger btn-sm dessert-card_font-btn" [routerLink]="['dessert/' + dessert._id]">
+              Voir plus ...
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <hr/>
+</div>
